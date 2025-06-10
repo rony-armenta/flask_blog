@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>
-        Home Page
-    </title>
-</head>
-
-<body>
-    <h1>Welcome to my home page - Flask blog app</h1>
-</body>
-
-</html>
+{% extends "layout.html" %}
+{% block content %}
+{% for spost in posts %}
+<h1>{{ spost.title }}</h1>
+<p>By: {{ spost.author }} On {{ spost.date_posted }}</p>
+<p>{{ spost.content }}</p>
+{% endfor %}
+{% endblock content %}
