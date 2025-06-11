@@ -1,8 +1,15 @@
 {% extends "layout.html" %}
 {% block content %}
 {% for spost in posts %}
-<h1>{{ spost.title }}</h1>
-<p>By: {{ spost.author }} On {{ spost.date_posted }}</p>
-<p>{{ spost.content }}</p>
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <a class="mr-2" href="#">{{ spost.author }}</a>
+            <small class="text-muted">{{ spost.date_posted }}</small>
+        </div>
+        <h2><a class="article-title" href="#">{{ spost.title }}</a></h2>
+        <p class="article-content">{{ spost.content }}</p>
+    </div>
+</article>
 {% endfor %}
 {% endblock content %}

@@ -10,6 +10,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+
     {% if title %}
     <title>Flask Blog - {{ title }}</title>
     {% else %}
@@ -22,17 +24,16 @@
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
             <div class="container">
-                <a class="navbar-brand" mr-4 href="/">Flask Blog</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand mr-4 href"="/">Flask Blog</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarToggle">
                     <div class="navbar-nav mr-auto">
                         <a class="nav-item nav-link" href="/">Home</a>
                         <a class="nav-item nav-link" href="/about">About</a>
-                        <a class="nav-item nav-link" href="/contact">Contact</a>
                     </div>
+                    <!--Navbar right side-->
                     <div class="navbar-nav">
                         <a class="nav-item nav-link" href="/login">Login</a>
                         <a class="nav-item nav-link" href="/register">Register</a>
@@ -41,12 +42,29 @@
             </div>
         </nav>
     </header>
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-8">
+                {% block content %}{% endblock %}
+            </div>
+            <div class="col-md4">
+                <div class="content secction">
+                    <h3>Our side bar</h3>
+                    <p class="text-muted">This is a side bar where you can put some information about your blog,
+                    <ul>
+                        <li>Latest post</li>
+                        <li>Announcements</li>
+                        <li>Calendar</li>
+                        <li>another information</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
 
 
-
-    <div class="container">
-        {% block content %}{% endblock content %}
-    </div>
+    </main>
     <!--Optional JavaScript-->
     <!--jQuery first, then popper.js, then Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
