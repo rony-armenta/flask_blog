@@ -6,14 +6,14 @@ posts = [
         'author': 'Rony Armenta',
         'title': 'Blog Post 1',
         'content': 'First post content',
-        'date_posted': 'Jun 10 2025'
+        'date_posted': 'Jun 11 2025'
     },
 
     {
         'author': 'Tony Artemna',
         'title': 'Blog Post 2',
         'content': 'Second post content',
-        'date_posted': 'Jun 09 2025'
+        'date_posted': 'Jun 12 2025'
     }
 ]
 
