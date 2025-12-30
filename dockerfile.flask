@@ -1,7 +1,32 @@
+# Dockerfile
+
+# Use an official Python runtime as a parent image
+# We choose a lightweight image with Python 3.9 and Alpine Linux for smaller image size.
 FROM python:3.13.4-alpine3.22
-WORKDIR /sysx/app/
+
+# Set the working directory in the container to /app
+# All subsequent commands will be executed in this directory.
+WORKDIR /app
+
+# Copy the requirements.txt file into the container at /app
 COPY requirements.txt .
-RUN pip install Flask --no-cache-dir -r requirements.txt
+
+# Install any needed packages specified in requirements.txt
+# --no-cache-dir ensures a smaller image by not storing build cache.
+# -r specifies the requirements file.
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the entire current directory (where Dockerfile, app.py, requirements.txt are)
+# into the container at /app.
 COPY . .
+
+# Expose port 5000 to the outside world
+# This tells Docker that the container will listen on port 5000 at runtime.
 EXPOSE 5000
-CMD ["python", "flaskblog.py"]
+
+# Define environment variable (optional, but good practice for Flask)
+ENV FLASK_APP=app.py
+
+# Run the Flask application when the container launches
+# 'python app.py' is the command to start our Flask application.
+CMD ["python", "flaskblog.py", "--host=0.0.0.0"]

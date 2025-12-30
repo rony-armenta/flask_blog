@@ -10,11 +10,18 @@ posts = [
     },
 
     {
-        'author': 'Tony Artemna',
+        'author': 'Tony Montana',
         'title': 'Blog Post 2',
         'content': 'Second post content',
-        'date_posted': 'Jun 12 2025'
+        'date_posted': 'Dec 04 2025'
+    },
+    {
+        'author': 'Katia Arrayales',
+        'title': 'Blog Post 3',
+        'content': 'Second post content',
+        'date_posted': 'Dec 05 2025'
     }
+
 ]
 
 
@@ -31,7 +38,7 @@ def about():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
 # To run this Flask application, you can use the following commands in your terminal:
 
 
