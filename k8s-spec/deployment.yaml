@@ -4,19 +4,19 @@ metadata:
   name: flask-blog
   namespace: flask-blog
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: blog 
+      app: flask-blog
   template:
     metadata:
       labels:
-        app: blog
+        app: flask-blog
     spec:
       containers:
-      - name: frontend-backend
-        # AQUÍ ESTÁ LA CONEXIÓN CON TU REGISTRY
-        image: flask-blog:1.4.1 
-        imagePullPolicy: Never 
-        ports:
-        - containerPort: 5000 # O el puerto que use tu app JS
+        - name: frontend-backend
+          # AQUÍ ESTÁ LA CONEXIÓN CON TU REGISTRY
+          image: flask-blog:1.4.1
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000 # O el puerto que use tu app python-flask
