@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-blog
+  namespace: flask-blog
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: blog 
+  template:
+    metadata:
+      labels:
+        app: blog
+    spec:
+      containers:
+      - name: frontend-backend
+        # AQUÍ ESTÁ LA CONEXIÓN CON TU REGISTRY
+        image: flask-blog:1.4.1 
+        imagePullPolicy: Never 
+        ports:
+        - containerPort: 5000 # O el puerto que use tu app JS

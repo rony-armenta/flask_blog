@@ -2,8 +2,7 @@
 
 # Use an official Python runtime as a parent image
 # We choose a lightweight image with Python 3.9 and Alpine Linux for smaller image size.
-FROM python:3.13.4-alpine3.22
-
+FROM python:3.13-alpine
 # Set the working directory in the container to /app
 # All subsequent commands will be executed in this directory.
 WORKDIR /app

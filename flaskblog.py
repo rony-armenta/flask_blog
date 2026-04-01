@@ -20,6 +20,12 @@ posts = [
         'title': 'Blog Post 3',
         'content': 'Second post content',
         'date_posted': 'Dec 05 2025'
+    },
+    {
+        'author': 'Carolina Armenta',
+        'title': 'Blog Post 4',
+        'content': 'Second post content',
+        'date_posted': 'March 28th 2026'
     }
 
 ]
